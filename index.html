@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nidal Essam Elsayed - Business Information Systems Student, Web Developer, and Graphic Designer Portfolio">
+  <title>Nidal Essam Elsayed | Portfolio</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Cairo', 'sans-serif'],
+          },
+          colors: {
+            primary: '#0078ff',
+            secondary: '#00c6ff',
+            accent: '#7c3aed',
+            dark: '#0f172a',
+            darker: '#020617',
+          },
+          animation: {
+            'blob': 'blob 7s infinite',
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            'typing': 'typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite',
+          },
+          keyframes: {
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          }
+        }
+      }
+    }
+  </script>
+
+<base target="_blank">
+</head>
+
+<body class="bg-gray-50 dark:bg-darker text-gray-800 dark:text-gray-100 font-sans transition-colors duration-300 overflow-x-hidden">
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 top-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <a href="#" class="text-2xl font-bold gradient-text tracking-tight">NE.</a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#home" class="nav-link text-sm font-medium hover:text-primary transition-colors">Home</a>
+          <a href="#about" class="nav-link text-sm font-medium hover:text-primary transition-colors">About</a>
+          <a href="#experience" class="nav-link text-sm font-medium hover:text-primary transition-colors">Experience</a>
+          <a href="#services" class="nav-link text-sm font-medium hover:text-primary transition-colors">Services</a>
+          <a href="#portfolio" class="nav-link text-sm font-medium hover:text-primary transition-colors">Projects</a>
+          <a href="#certificates" class="nav-link text-sm font-medium hover:text-primary transition-colors">Certificates</a>
+          <a href="#contact" class="nav-link text-sm font-medium hover:text-primary transition-colors">Contact</a>
+
+          <!-- Dark Mode Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" aria-label="Toggle Dark Mode">
+            <i class="fas fa-sun text-yellow-500 dark:hidden text-lg"></i>
+            <i class="fas fa-moon text-blue-400 hidden dark:block text-lg"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center space-x-4">
+          <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            <i class="fas fa-sun text-yellow-500 dark:hidden"></i>
+            <i class="fas fa-moon text-blue-400 hidden dark:block"></i>
+          </button>
+          <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden glass absolute w-full border-t border-gray-200 dark:border-gray-700">
+      <div class="px-4 pt-2 pb-6 space-y-2">
+        <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10 hover:text-primary transition-colors">Home</a>
+        <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10 hover:text-primary transition-colors">About</a>
+        <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10 hover:text-primary transition-colors">Experience</a>
+        <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10 hover:text-primary transition-colors">Services</a>
+        <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10 hover:text-primary transition-colors">Projects</a>
+        <a href="#certificates" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10 hover:text-primary transition-colors">Certificates</a>
+        <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10 hover:text-primary transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden">
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Animated Background Blobs -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/20 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+      <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-secondary/20 rounded-full mix-blend-multiply filter blur-xl animate-blob" style="animation-delay: 2s"></div>
+      <div class="absolute bottom-1/4 left-1/3 w-72 h-72 bg-accent/20 rounded-full mix-blend-multiply filter blur-xl animate-blob" style="animation-delay: 4s"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="reveal active">
+        <div class="inline-block mb-4 px-4 py-1.5 rounded-full glass text-sm font-medium text-primary border border-primary/20">
+          <i class="fas fa-circle text-[8px] mr-2 animate-pulse"></i> Available for Opportunities
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          Hi, I'm <span class="gradient-text">Nidal Essam</span>
+        </h1>
+        <div class="h-12 md:h-16 mb-8">
+          <span id="typing-text" class="text-xl md:text-3xl text-gray-300 font-light"></span>
+          <span class="text-primary animate-pulse">|</span>
+        </div>
+        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          Business Information Systems student combining administrative expertise with technical capabilities in 
+          automation, web development, and graphic design.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="#portfolio" class="btn-primary-gradient px-8 py-4 rounded-full text-white font-semibold text-lg shadow-lg hover:shadow-primary/50 transition-all">
+            View My Work <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/nidal-essam-tammam-a61900389/" target="_blank" class="px-8 py-4 rounded-full glass text-white font-semibold text-lg hover:bg-white/20 transition-all border border-white/20">
+            <i class="fab fa-linkedin mr-2"></i> LinkedIn
+          </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="mt-12 flex justify-center gap-6">
+          <a href="https://github.com/nidal12essam12" target="_blank" class="social-icon text-gray-400 hover:text-white text-2xl">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/nidal-essam-tammam-a61900389/" target="_blank" class="social-icon text-gray-400 hover:text-white text-2xl">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://t.me/NE_BIS_bot" target="_blank" class="social-icon text-gray-400 hover:text-white text-2xl">
+            <i class="fab fa-telegram"></i>
+          </a>
+          <a href="mailto:nidalessamel@gmail.com" class="social-icon text-gray-400 hover:text-white text-2xl">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <a href="#about" class="text-gray-400 hover:text-white transition-colors">
+        <i class="fas fa-chevron-down text-2xl"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">About <span class="gradient-text">Me</span></h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Image Column -->
+        <div class="reveal">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-30 blur-lg"></div>
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img src="img/me.jpeg" alt="Nidal Essam" class="w-full h-auto object-cover">
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <p class="text-white font-semibold">Nidal Essam Elsayed</p>
+                <p class="text-gray-300 text-sm">BIS Student & Developer</p>
+              </div>
+            </div>
+            <!-- Floating Card -->
+            <div class="absolute -bottom-6 -right-6 glass rounded-xl p-4 shadow-xl border border-white/20">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                  <i class="fas fa-code text-primary text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-2xl font-bold gradient-text">2+</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Years Learning</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Column -->
+        <div class="reveal space-y-6">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Business Information Systems Student</h3>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Combining administrative, executive skills, and technical capabilities in automation programming and web design & development. 
+            Possesses practical experience in administrative supervision and educational systems automation, alongside strong front-end, UI/UX, and graphic design skills.
+          </p>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Driven by an analytical mindset focused on leveraging technology to enhance operational efficiency. 
+            I believe in working smart, not just hard, and constantly seek innovative solutions to complex problems.
+          </p>
+
+          <!-- Info Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+            <div class="flex items-center gap-3 p-3 rounded-lg bg-white dark:bg-slate-800 shadow-sm border border-gray-100 dark:border-gray-700">
+              <i class="fas fa-user text-primary"></i>
+              <div>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Full Name</p>
+                <p class="font-semibold text-sm">Nidal Essam Elsayed</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg bg-white dark:bg-slate-800 shadow-sm border border-gray-100 dark:border-gray-700">
+              <i class="fas fa-calendar text-primary"></i>
+              <div>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Date of Birth</p>
+                <p class="font-semibold text-sm">August 1, 2007</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg bg-white dark:bg-slate-800 shadow-sm border border-gray-100 dark:border-gray-700">
+              <i class="fas fa-map-marker-alt text-primary"></i>
+              <div>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Location</p>
+                <p class="font-semibold text-sm">Giza/Cairo, Egypt</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg bg-white dark:bg-slate-800 shadow-sm border border-gray-100 dark:border-gray-700">
+              <i class="fas fa-shield-alt text-primary"></i>
+              <div>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Military Status</p>
+                <p class="font-semibold text-sm">Postponed (Student)</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg bg-white dark:bg-slate-800 shadow-sm border border-gray-100 dark:border-gray-700">
+              <i class="fas fa-envelope text-primary"></i>
+              <div>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Email</p>
+                <p class="font-semibold text-sm">nidalessamel@gmail.com</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg bg-white dark:bg-slate-800 shadow-sm border border-gray-100 dark:border-gray-700">
+              <i class="fas fa-phone text-primary"></i>
+              <div>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Phone</p>
+                <p class="font-semibold text-sm">+20 1158476747</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <a href="https://www.linkedin.com/in/nidal-essam-tammam-a61900389/" target="_blank" class="inline-flex items-center gap-2 text-primary hover:text-secondary font-semibold transition-colors">
+              View LinkedIn Profile <i class="fas fa-external-link-alt text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="py-24 bg-gray-100 dark:bg-dark relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Technical <span class="gradient-text">Skills</span></h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Skill Bars -->
+        <div class="space-y-6 reveal">
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+            <i class="fas fa-code text-primary"></i> Development
+          </h3>
+
+          <div class="skill-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-medium">HTML5 / CSS3 / CSS3 Animation</span>
+              <span class="text-primary font-semibold">Advanced</span>
+            </div>
+            <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+              <div class="skill-bar h-full bg-gradient-to-r from-primary to-secondary rounded-full" data-width="90%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-medium">Bootstrap</span>
+              <span class="text-primary font-semibold">Intermediate</span>
+            </div>
+            <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+              <div class="skill-bar h-full bg-gradient-to-r from-primary to-secondary rounded-full" data-width="70%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-medium">jQuery Concepts</span>
+              <span class="text-primary font-semibold">Intermediate</span>
+            </div>
+            <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+              <div class="skill-bar h-full bg-gradient-to-r from-primary to-secondary rounded-full" data-width="65%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-medium">Telegram Bot Development & APIs</span>
+              <span class="text-primary font-semibold">Intermediate</span>
+            </div>
+            <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+              <div class="skill-bar h-full bg-gradient-to-r from-primary to-secondary rounded-full" data-width="70%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6 reveal">
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+            <i class="fas fa-paint-brush text-primary"></i> Design & Others
+          </h3>
+
+          <div class="skill-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-medium">Visual Template Design (Canva)</span>
+              <span class="text-primary font-semibold">Advanced</span>
+            </div>
+            <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+              <div class="skill-bar h-full bg-gradient-to-r from-primary to-secondary rounded-full" data-width="90%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-medium">Adobe Photoshop CC (Web)</span>
+              <span class="text-primary font-semibold">Intermediate</span>
+            </div>
+            <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+              <div class="skill-bar h-full bg-gradient-to-r from-primary to-secondary rounded-full" data-width="65%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-medium">Adobe XD CC & Dreamweaver</span>
+              <span class="text-primary font-semibold">Intermediate</span>
+            </div>
+            <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+              <div class="skill-bar h-full bg-gradient-to-r from-primary to-secondary rounded-full" data-width="60%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-medium">Cybersecurity & Networking Fundamentals</span>
+              <span class="text-primary font-semibold">Basic</span>
+            </div>
+            <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+              <div class="skill-bar h-full bg-gradient-to-r from-primary to-secondary rounded-full" data-width="45%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soft Skills Tags -->
+      <div class="mt-16 reveal">
+        <h3 class="text-xl font-bold mb-6 text-center">Soft Skills & Languages</h3>
+        <div class="flex flex-wrap justify-center gap-3">
+          <span class="px-4 py-2 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-gray-200 dark:border-gray-700 text-sm font-medium">
+            <i class="fas fa-brain text-primary mr-2"></i>Analytical Thinking
+          </span>
+          <span class="px-4 py-2 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-gray-200 dark:border-gray-700 text-sm font-medium">
+            <i class="fas fa-tasks text-primary mr-2"></i>Organization & Logistics
+          </span>
+          <span class="px-4 py-2 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-gray-200 dark:border-gray-700 text-sm font-medium">
+            <i class="fas fa-calculator text-primary mr-2"></i>Administrative Skills
+          </span>
+          <span class="px-4 py-2 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-gray-200 dark:border-gray-700 text-sm font-medium">
+            <i class="fas fa-clock text-primary mr-2"></i>Time Management
+          </span>
+          <span class="px-4 py-2 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-gray-200 dark:border-gray-700 text-sm font-medium">
+            <i class="fas fa-language text-primary mr-2"></i>Arabic (Native)
+          </span>
+          <span class="px-4 py-2 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-gray-200 dark:border-gray-700 text-sm font-medium">
+            <i class="fas fa-globe text-primary mr-2"></i>English (Intermediate)
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Experience & <span class="gradient-text">Education</span></h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+      </div>
+
+      <div class="relative">
+        <div class="timeline-line"></div>
+
+        <div class="space-y-12">
+          <!-- Experience 1 -->
+          <div class="relative reveal">
+            <div class="md:flex items-center justify-between">
+              <div class="md:w-5/12 md:text-right md:pr-12 mb-4 md:mb-0">
+                <span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-2">2025 – Present</span>
+                <h3 class="text-xl font-bold">Administrative Assistant & Supervisor</h3>
+                <p class="text-gray-600 dark:text-gray-400">Al-Maher bil-Qur'an Association</p>
+              </div>
+              <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center shadow-lg z-10 hidden md:flex">
+                <i class="fas fa-briefcase text-white"></i>
+              </div>
+              <div class="md:w-5/12 md:pl-12">
+                <div class="glass rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                  <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check-circle text-primary mt-1"></i>
+                      <span>Developed and automated student registration systems and digital documentation</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check-circle text-primary mt-1"></i>
+                      <span>Supervised daily operations and organized logistical schedules</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check-circle text-primary mt-1"></i>
+                      <span>Designed promotional materials, banners, and logos for visual identity</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="relative reveal">
+            <div class="md:flex items-center justify-between">
+              <div class="md:w-5/12 md:pr-12 md:text-right order-1 md:order-1 mb-4 md:mb-0">
+                <div class="glass rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                  <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check-circle text-primary mt-1"></i>
+                      <span>Built interactive Telegram bots for academic services</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check-circle text-primary mt-1"></i>
+                      <span>Managed student communication groups and organized academic content</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check-circle text-primary mt-1"></i>
+                      <span>Developed automation solutions for educational workflows</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-secondary to-accent flex items-center justify-center shadow-lg z-10 hidden md:flex">
+                <i class="fas fa-laptop-code text-white"></i>
+              </div>
+              <div class="md:w-5/12 md:pl-12 order-2 md:order-2">
+                <span class="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm font-semibold mb-2">2025 – Present</span>
+                <h3 class="text-xl font-bold">Freelance Software Developer</h3>
+                <p class="text-gray-600 dark:text-gray-400">Freelance Projects / Student Services</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="relative reveal">
+            <div class="md:flex items-center justify-between">
+              <div class="md:w-5/12 md:text-right md:pr-12 mb-4 md:mb-0">
+                <span class="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-2">2025 – Present</span>
+                <h3 class="text-xl font-bold">Business Information Systems (BIS)</h3>
+                <p class="text-gray-600 dark:text-gray-400">Tiba Higher Institute for Management and IT</p>
+              </div>
+              <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-accent to-primary flex items-center justify-center shadow-lg z-10 hidden md:flex">
+                <i class="fas fa-graduation-cap text-white"></i>
+              </div>
+              <div class="md:w-5/12 md:pl-12">
+                <div class="glass rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                  <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                    Currently pursuing a degree in Business Information Systems, combining business administration 
+                    with information technology to bridge the gap between business needs and technical solutions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-24 bg-gray-100 dark:bg-dark relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">My <span class="gradient-text">Services</span></h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-4"></div>
+        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Professional services tailored to meet your digital needs with quality and precision.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="reveal card-hover bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 group">
+          <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+            <i class="fas fa-paint-brush text-2xl text-primary group-hover:text-white transition-colors"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Web Design</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            Building, designing and preparing websites to the fullest extent so that they are suitable for use, ensuring both user and client satisfaction.
+          </p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="reveal card-hover bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 group">
+          <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors duration-300">
+            <i class="fas fa-code text-2xl text-secondary group-hover:text-white transition-colors"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Web Development</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            Creating interactive web applications, from simple pages to complex solutions, using modern client-side technologies and best practices.
+          </p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="reveal card-hover bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 group">
+          <div class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300">
+            <i class="fas fa-robot text-2xl text-accent group-hover:text-white transition-colors"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Telegram Bot Development</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            Building automated Telegram bots for academic services, notifications, and business automation with API integrations.
+          </p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="reveal card-hover bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 group">
+          <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+            <i class="fas fa-palette text-2xl text-primary group-hover:text-white transition-colors"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Graphic Design</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            Creating visual representations using various methods, symbols, images, and typography to deliver compelling visual messages and brand identities.
+          </p>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="reveal card-hover bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 group">
+          <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors duration-300">
+            <i class="fas fa-mobile-alt text-2xl text-secondary group-hover:text-white transition-colors"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Responsive Design</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            Designing websites that adapt perfectly to any device - desktops, tablets, and mobile phones - ensuring optimal user experience across all screen sizes.
+          </p>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="reveal card-hover bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 group">
+          <div class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300">
+            <i class="fas fa-cogs text-2xl text-accent group-hover:text-white transition-colors"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Business Automation</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            Automating administrative workflows, student registration systems, and digital documentation to improve operational efficiency.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio / Projects Section -->
+  <section id="portfolio" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Featured <span class="gradient-text">Projects</span></h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-4"></div>
+        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">A selection of my recent work and ongoing projects.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1: Telegram Bot -->
+        <div class="reveal group relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-slate-800 border border-gray-100 dark:border-gray-700">
+          <div class="relative overflow-hidden h-56">
+            <img src="img/bot-photo.png" alt="Telegram Bot" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <a href="https://t.me/NE_BIS_bot" target="_blank" class="text-white font-semibold flex items-center gap-2 hover:text-primary transition-colors">
+                View Bot <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Telegram Bot</span>
+              <span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-semibold">Automation</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">NE_BIS Academic Bot</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+              Interactive Telegram bot serving students with study materials, summaries, and daily schedule alerts. Facilitates seamless access to academic resources.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2">
+                <i class="fab fa-python text-gray-400"></i>
+                <i class="fas fa-robot text-gray-400"></i>
+              </div>
+              <a href="https://t.me/NE_BIS_bot" target="_blank" class="text-primary hover:text-secondary text-sm font-semibold transition-colors">
+                @NE_BIS_bot <i class="fab fa-telegram ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Static Websites -->
+        <div class="reveal group relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-slate-800 border border-gray-100 dark:border-gray-700">
+          <div class="relative overflow-hidden h-56">
+            <img src="img/website-pro.png" alt="Web Projects" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <span class="text-white font-semibold">Static Websites Portfolio</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Web Design</span>
+              <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">Frontend</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Static Website Projects</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+              Collection of developed static websites including nidal.web, Lavender Restaurant, smart12pro12, and Arkan Office with modern UI/UX design.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2">
+                <i class="fab fa-html5 text-gray-400"></i>
+                <i class="fab fa-css3-alt text-gray-400"></i>
+                <i class="fab fa-js text-gray-400"></i>
+              </div>
+              <span class="text-gray-400 text-sm">Multiple Projects</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Roblox -->
+        <div class="reveal group relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-slate-800 border border-gray-100 dark:border-gray-700">
+          <div class="relative overflow-hidden h-56">
+            <img src="https://placehold.co/600x400/1e293b/7c3aed?text=Roblox+Dev" alt="Roblox Project" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <span class="text-white font-semibold">Technical Development</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">Roblox</span>
+              <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Game Dev</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Red Flame Streetwear</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+              Roblox technical development project including clothing design, physics analysis, and hitbox optimization for gaming experiences.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2">
+                <i class="fas fa-gamepad text-gray-400"></i>
+                <i class="fas fa-tshirt text-gray-400"></i>
+              </div>
+              <span class="text-gray-400 text-sm">Feb 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Motion Graphics -->
+<div class="reveal group relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-slate-800 border border-gray-100 dark:border-gray-700">
+  <div class="relative overflow-hidden h-56 bg-black">
+    <video 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      poster="https://placehold.co/600x400/1e293b/xt=Motion+Graphics"
+    >
+      <source src="video/burger-tasty-ad.mp4" type="video/mp4">
+      <!-- احتياطي لو المتصفح ما يدعم الفيديو -->
+      <img src="https://placehold.co/600x400/1e293b/ff6b6b?text=Motion+Graphics" alt="Motion Graphics" class="w-full h-full object-cover">
+    </video>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+      <span class="text-white font-semibold">Visual Content</span>
+    </div>
+  </div>
+  <div class="p-6">
+    <div class="flex items-center gap-2 mb-3">
+      <span class="px-3 py-1 rounded-full bg-red-500/10 text-red-500 text-xs font-semibold">Motion</span>
+      <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Design</span>
+    </div>
+    <h3 class="text-xl font-bold mb-2">Burger Tasty Motion Graphics</h3>
+    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+      Creative motion graphics and promotional video content for food marketing and brand advertising campaigns.
+    </p>
+    <div class="flex items-center justify-between">
+      <div class="flex gap-2">
+        <i class="fas fa-video text-gray-400"></i>
+        <i class="fas fa-ad text-gray-400"></i>
+      </div>
+      <span class="text-gray-400 text-sm">Motion Graphics</span>
+    </div>
+  </div>
+</div>
+
+        <!-- Project 5: AI Telegram Bot -->
+        <div class="reveal group relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-slate-800 border border-gray-100 dark:border-gray-700">
+          <div class="relative overflow-hidden h-56">
+            <img src="img/ads-chan.png" alt="AI Bot" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <span class="text-white font-semibold">AI Integration</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 rounded-full bg-green-500/10 text-green-500 text-xs font-semibold">AI</span>
+              <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Automation</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">AI News & Price Bot</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+              AI-assisted Telegram bot for news aggregation and price tracking, built with ~130 lines of code using Gemini, DeepSeek, and Qwen APIs.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2">
+                <i class="fas fa-brain text-gray-400"></i>
+                <i class="fas fa-robot text-gray-400"></i>
+				<a href="https://t.me/Nidal12essam" target="_blank" class="text-primary hover:text-secondary text-sm font-semibold transition-colors">
+                @Nidal12essam <i class="fab fa-telegram ml-1"></i>
+              </a>
+              </div>
+              <span class="text-gray-400 text-sm">Jun 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Barter Systems -->
+        <div class="reveal group relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-slate-800 border border-gray-100 dark:border-gray-700">
+          <div class="relative overflow-hidden h-56">
+            <img src="img/Barter Systems Presentation.png" alt="Barter System" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <span class="text-white font-semibold">Academic Presentation</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-500 text-xs font-semibold">Academic</span>
+              <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Research</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Barter Systems Presentation</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+              Academic research presentation on barter systems and alternative economic models, delivered February 2026.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2">
+                <i class="fas fa-chart-line text-gray-400"></i>
+                <i class="fas fa-presentation text-gray-400"></i>
+              </div>
+              <span class="text-gray-400 text-sm">Feb 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="py-24 bg-gray-100 dark:bg-dark relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Certifications & <span class="gradient-text">Training</span></h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-4"></div>
+        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Professional certifications and completed training programs.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Certificate 1: Web Design -->
+        <div class="reveal certificate-frame glass rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 group">
+          <div class="relative h-64 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center overflow-hidden">
+            <!-- Placeholder for Certificate Image -->
+            <img src="img/website_des.jpeg" alt="Web Design Diploma" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors">
+              <div class="text-center text-white">
+                <i class="fas fa-certificate text-5xl mb-3 opacity-80"></i>
+                <p class="text-sm font-medium">Click to add your certificate image</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Diploma</span>
+              <span class="text-gray-500 dark:text-gray-400 text-sm"><i class="far fa-calendar-alt mr-1"></i> Nov 2023</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Web Design Diploma</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+              <i class="fas fa-university mr-1 text-primary"></i> Russian Cultural Center - Computer Studies Dept
+            </p>
+            <div class="space-y-1">
+              <p class="text-xs text-gray-500 dark:text-gray-400"><i class="fas fa-check text-green-500 mr-2"></i>Adobe Photoshop CC for Web</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400"><i class="fas fa-check text-green-500 mr-2"></i>Adobe XD CC & Dreamweaver CC</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400"><i class="fas fa-check text-green-500 mr-2"></i>HTML5, CSS3, CSS3 Animation</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400"><i class="fas fa-check text-green-500 mr-2"></i>Bootstrap & jQuery Concepts</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificate 2: Cybersecurity -->
+        <div class="reveal certificate-frame glass rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 group">
+          <div class="relative h-64 bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center overflow-hidden">
+            <img src="img/cisco.png" alt="Cybersecurity Certificate" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors">
+              <div class="text-center text-white">
+                <i class="fas fa-shield-alt text-5xl mb-3 opacity-80"></i>
+                <p class="text-sm font-medium">Click to add your certificate image</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">Certification</span>
+              <span class="text-gray-500 dark:text-gray-400 text-sm"><i class="far fa-calendar-alt mr-1"></i> March 2026</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Introduction to Cybersecurity</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+              <i class="fas fa-university mr-1 text-accent"></i> Cisco Networking Academy
+            </p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              Comprehensive introduction to cybersecurity principles, network security fundamentals, and protection mechanisms against cyber threats.
+            </p>
+            <div class="mt-4 flex items-center gap-2">
+              <i class="fas fa-medal text-yellow-500"></i>
+              <span class="text-sm text-gray-500 dark:text-gray-400">Industry Recognized Credential</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Get In <span class="gradient-text">Touch</span></h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-4"></div>
+        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Have a project in mind or want to collaborate? Feel free to reach out.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Contact Info -->
+        <div class="reveal space-y-8">
+          <div class="glass rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Location</h4>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">Giza/Cairo, Egypt</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-envelope text-secondary text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Email</h4>
+                  <a href="mailto:nidalessamel@gmail.com" class="text-gray-600 dark:text-gray-400 text-sm hover:text-primary transition-colors">nidalessamel@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-phone text-accent text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Phone</h4>
+                  <a href="tel:+201158476747" class="text-gray-600 dark:text-gray-400 text-sm hover:text-primary transition-colors">+20 1158476747</a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <i class="fab fa-linkedin text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">LinkedIn</h4>
+                  <a href="https://www.linkedin.com/in/nidal-essam-tammam-a61900389/" target="_blank" class="text-gray-600 dark:text-gray-400 text-sm hover:text-primary transition-colors">
+                    linkedin.com/in/nidal-essam-tammam
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                  <i class="fab fa-github text-secondary text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">GitHub</h4>
+                  <a href="https://github.com/nidal12essam12" target="_blank" class="text-gray-600 dark:text-gray-400 text-sm hover:text-primary transition-colors">
+                    github.com/nidal12essam12
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <i class="fab fa-telegram text-accent text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Telegram Bot</h4>
+                  <a href="https://t.me/NE_BIS_bot" target="_blank" class="text-gray-600 dark:text-gray-400 text-sm hover:text-primary transition-colors">
+                    @NE_BIS_bot
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <h4 class="font-semibold mb-4">Follow Me</h4>
+              <div class="flex gap-4">
+                <a href="https://www.linkedin.com/in/nidal-essam-tammam-a61900389/" target="_blank" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/nidal12essam12" target="_blank" class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://t.me/NE_BIS_bot" target="_blank" class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all">
+                  <i class="fab fa-telegram-plane"></i>
+                </a>
+                <a href="mailto:nidalessamel@gmail.com" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="reveal">
+          <div class="glass rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-2xl font-bold mb-6">Send Message</h3>
+            <form id="contactForm" class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium mb-2">Your Name</label>
+                  <input type="text" required class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="John Doe">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium mb-2">Your Email</label>
+                  <input type="email" required class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="john@example.com">
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">Subject</label>
+                <input type="text" required class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Project Collaboration">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">Message</label>
+                <textarea rows="5" required class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none" placeholder="Tell me about your project..."></textarea>
+              </div>
+              <button type="submit" class="w-full btn-primary-gradient py-4 rounded-xl text-white font-semibold text-lg shadow-lg hover:shadow-primary/50 transition-all">
+                Send Message <i class="fas fa-paper-plane ml-2"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="text-center md:text-left">
+          <h3 class="text-2xl font-bold gradient-text mb-2">Nidal Essam Elsayed</h3>
+          <p class="text-gray-400 text-sm">Business Information Systems Student & Developer</p>
+        </div>
+        <div class="flex gap-6">
+          <a href="https://www.linkedin.com/in/nidal-essam-tammam-a61900389/" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/nidal12essam12" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://t.me/NE_BIS_bot" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl">
+            <i class="fab fa-telegram"></i>
+          </a>
+          <a href="mailto:nidalessamel@gmail.com" class="text-gray-400 hover:text-white transition-colors text-xl">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+        <p class="text-gray-500 text-sm">
+          &copy; 2026 <span class="text-primary">Nidal Essam Elsayed</span>. All Rights Reserved. Built with passion and code.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary text-white shadow-lg flex items-center justify-center transform translate-y-20 opacity-0 transition-all duration-300 hover:scale-110 z-40">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
